@@ -1,10 +1,9 @@
 package br.com.loja.virtual.repository.test;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-
 import br.com.loja.virtual.repository.conexao.ConnectionFactory;
 
 public class TestaListagem {
@@ -14,12 +13,12 @@ public class TestaListagem {
 		ConnectionFactory connectionFactory = new ConnectionFactory();
 		Connection connection = connectionFactory.recuperarConexao();
 	
-		Statement statement = connection.createStatement();
-		boolean resultado = statement.execute("SELECT ID, NOME, DESCRICAO FROM PRODUTO");
+		PreparedStatement preparedStatement = connection.prepareStatement("SELECT ID, NOME, DESCRICAO FROM PRODUTO");
+		boolean resultado = preparedStatement.execute();
 	
 		System.out.println(resultado);
 		
-		ResultSet resultSet = statement.getResultSet();
+		ResultSet resultSet = preparedStatement.getResultSet();
 		
 		System.out.println(resultSet);
 		
