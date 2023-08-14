@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-import br.com.loja.virtual.repository.conexao.ConnectionFactory;
 import br.com.loja.virtual.repository.dao.ProdutoDAO;
+import br.com.loja.virtual.repository.factory.ConnectionFactory;
 import br.com.loja.virtual.repository.modelo.Produto;
 
 public class TestaInsercaoEListagemComProduto {

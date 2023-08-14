@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import br.com.loja.virtual.repository.conexao.ConnectionFactory;
+import br.com.loja.virtual.repository.factory.ConnectionFactory;
 
 public class TestaInsercao {
 
@@ -16,7 +16,7 @@ public class TestaInsercao {
 		
 		Statement statement = connection.createStatement();
 		boolean resultado = statement.execute("INSERT INTO PRODUTO (nome, descricao)"
-				+ "VALUES ('MOUSE', 'MOUSE SEM FIO LENOVO')",
+				+ "VALUES ('GELADEIRA', 'GELADEIRA AZUL')",
 				Statement.RETURN_GENERATED_KEYS);
 		System.out.println(resultado);
 		

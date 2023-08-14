@@ -2,7 +2,7 @@ package br.com.loja.virtual.repository.test;
 
 import java.sql.SQLException;
 
-import br.com.loja.virtual.repository.conexao.ConnectionFactory;
+import br.com.loja.virtual.repository.factory.ConnectionFactory;
 
 public class TestaPoolConexoes {
 
