@@ -79,7 +79,7 @@ public class ProdutoCategoriaFrame extends JFrame {
 		botaoLimpar = new JButton("Limpar");
 
 		botaoSalvar.setBounds(10, 145, 80, 20);
-		botaoLimpar.setBounds(100, 145, 80, 20);
+		botaoLimpar.setBounds(100, 145, 100, 20);
 
 		container.add(botaoSalvar);
 		container.add(botaoLimpar);
