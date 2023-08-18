@@ -6,6 +6,7 @@
 
     <persistence-unit name="loja_virtual_jpahibernate" transaction-type="RESOURCE_LOCAL">
     	<class>br.com.alura.loja.modelo.Produto</class>
+    	<class>br.com.alura.loja.modelo.Categoria</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/loja_virtual_jpahibernate"/>
