@@ -25,6 +25,9 @@ public class Produto {
 	@ManyToOne //cardinalidade muitos produtos estão vinculados a uma única categoria
 	private Categoria categoria; //um produto tem uma categoria e uma categoria tem vários produtos
 	
+	public Produto() {
+		
+	}
 	
 	public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
 		super();
