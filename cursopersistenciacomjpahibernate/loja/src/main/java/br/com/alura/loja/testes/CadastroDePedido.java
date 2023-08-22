@@ -18,23 +18,30 @@ public class CadastroDePedido {
 		EntityManager entityManager = JPAUtil.getEntityManager();
 		ProdutoDao produtoDao = new ProdutoDao(entityManager);
 		ClienteDao clienteDao = new ClienteDao(entityManager);
-		Produto produto = produtoDao.buscarPorId(3l);
-		Cliente cliente = clienteDao.buscarPorId(1l);
+		Produto produto10 = produtoDao.buscarPorId(10l);
+		Produto produto11 = produtoDao.buscarPorId(11l);
+		Produto produto12 = produtoDao.buscarPorId(12l);
+		Cliente cliente = clienteDao.buscarPorId(3l);
 		
 		entityManager.getTransaction().begin();
 		
 		
-		Pedido pedido = new Pedido(cliente);
-		pedido.adicionarItem(new ItemPedido(10, pedido, produto));
+		Pedido pedido3 = new Pedido(cliente);
+		pedido3.adicionarItem(new ItemPedido(10, pedido3, produto10));
+		pedido3.adicionarItem(new ItemPedido(20, pedido3, produto11));
+		
+		Pedido pedido4 = new Pedido(cliente);
+		pedido4.adicionarItem(new ItemPedido(2, pedido3, produto12));
 		
 		PedidoDao pedidoDao = new PedidoDao(entityManager);
-		pedidoDao.cadastrar(pedido);
+		pedidoDao.cadastrar(pedido3);
+		pedidoDao.cadastrar(pedido4);
 		
 		entityManager.getTransaction().commit();
 	}
 	
 	private static void popularBancoDeDados() {
-		Cliente cliente = new Cliente("Matheus", "12345678");
+		Cliente cliente = new Cliente("MMarchetti", "12345678");
 		
 		EntityManager entityManager = JPAUtil.getEntityManager();
 		ClienteDao clienteDao = new ClienteDao(entityManager);

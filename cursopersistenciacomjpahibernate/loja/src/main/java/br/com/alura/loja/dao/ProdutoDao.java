@@ -45,8 +45,7 @@ public class ProdutoDao {
 	}
 	
 	public List<Produto> buscarNomeDaCategoria(String nome) {
-		String jpql = "SELECT produto FROM Produto produto WHERE produto.categoria.nome = :nome";
-		return entityManager.createQuery(jpql, Produto.class)
+		return entityManager.createNamedQuery("Produto.produtosPorCategoria", Produto.class)
 				.setParameter("nome", nome)
 				.getResultList();
 	}
