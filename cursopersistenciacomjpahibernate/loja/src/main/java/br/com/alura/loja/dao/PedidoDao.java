@@ -37,4 +37,10 @@ public class PedidoDao {
 				+ "ORDER BY quantidadeTotal DESC";
 		return entityManager.createQuery(jpql, RelatorioDeVendasVo.class).getResultList();
 	}
+	
+	public Pedido buscarPedidoComCliente(Long id) {
+		return entityManager.createQuery("SELECT pedido FROM Pedido pedido JOIN FETCH pedido.cliente WHERE pedido.id = :id", Pedido.class)
+				.setParameter("id", id)
+				.getSingleResult();
+	}
 }

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,7 +26,7 @@ public class Produto {
 	private BigDecimal preco;
 	private LocalDate  dataCadastro = LocalDate.now();
 	//@Enumerated(EnumType.STRING) anotação para relacionar um coluna varchar no banco de dados
-	@ManyToOne //cardinalidade muitos produtos estão vinculados a uma única categoria
+	@ManyToOne(fetch = FetchType.LAZY) //cardinalidade muitos produtos estão vinculados a uma única categoria
 	private Categoria categoria; //um produto tem uma categoria e uma categoria tem vários produtos
 	
 	public Produto() {
