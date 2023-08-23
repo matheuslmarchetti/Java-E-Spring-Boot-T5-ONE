@@ -19,6 +19,6 @@ public class BuscarNomeDaCategoria {
 		
 		List<Produto> todos = produtoDao.buscarNomeDaCategoria("CELULARES");
 		todos.forEach(produto -> System.out.println(produto.getNome()));
-		System.out.println(entityManager.find(Categoria.class, new CategoriaId("CELULARES", null)));
+		System.out.println(entityManager.find(Categoria.class, new CategoriaId("CELULARES", "tipo padrão")));
 	}
 }
