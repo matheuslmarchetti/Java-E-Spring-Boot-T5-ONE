@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import br.com.alura.loja.dao.ProdutoDao;
+import br.com.alura.loja.modelo.Categoria;
+import br.com.alura.loja.modelo.CategoriaId;
 import br.com.alura.loja.modelo.Produto;
 import br.com.alura.loja.ultil.JPAUtil;
 
@@ -17,5 +19,6 @@ public class BuscarNomeDaCategoria {
 		
 		List<Produto> todos = produtoDao.buscarNomeDaCategoria("CELULARES");
 		todos.forEach(produto -> System.out.println(produto.getNome()));
+		System.out.println(entityManager.find(Categoria.class, new CategoriaId("CELULARES", null)));
 	}
 }
