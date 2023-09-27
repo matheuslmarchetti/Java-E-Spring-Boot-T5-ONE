@@ -11,15 +11,14 @@ public class TestaListagem {
 	public static void main(String[] args) throws SQLException {
 		ConnectionFactory factory = new ConnectionFactory();
 		Connection conexao = factory.criaConexao();
-		
-		PreparedStatement preparedStatement = conexao.prepareStatement
-				("SELECT * FROM reserva");
-		
+
+		PreparedStatement preparedStatement = conexao.prepareStatement("SELECT * FROM reserva");
+
 		preparedStatement.execute();
-		
+
 		ResultSet resultSet = preparedStatement.getResultSet();
-		
-		while(resultSet.next()) {
+
+		while (resultSet.next()) {
 			int id = resultSet.getInt("id");
 			Date dataentrada = resultSet.getDate("dataentrada");
 			Date datasaida = resultSet.getDate("datasaida");

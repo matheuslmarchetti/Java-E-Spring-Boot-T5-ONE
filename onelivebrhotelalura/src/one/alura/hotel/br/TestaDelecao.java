@@ -8,6 +8,7 @@ public class TestaDelecao {
 	public static void main(String[] args) throws SQLException {
 		ConnectionFactory factory = new ConnectionFactory();
 		Connection conexao = factory.criaConexao();
+		conexao.close();
 
 	}
 
